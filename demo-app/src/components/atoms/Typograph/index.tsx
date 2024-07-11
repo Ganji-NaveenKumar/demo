@@ -3,12 +3,12 @@ import {Typography,TypographyProps as MuiTypographyProps} from '@mui/material';
 interface TypographyProps{
     variant:MuiTypographyProps['variant'];
     children:string;
-    style:React.CSSProperties;
+    // style?:React.CSSProperties;
 }
-const TypographyComp:React.FC<TypographyProps>=(props)=>{
+const TypographyComp:React.FC<TypographyProps>=({variant,children})=>{
     return(
         <div>
-            <Typography variant={props.variant}>{props.children}</Typography>
+            <Typography variant={variant}>{children}</Typography>
         </div>
     );
 }

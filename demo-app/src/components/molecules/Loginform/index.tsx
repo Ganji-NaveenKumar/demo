@@ -2,22 +2,32 @@ import React from "react";
 import { useState } from "react";
 import TypographyComp from "../../atoms/Typograph";
 import TextFieldComp from "../../atoms/InputField";
+import styled from "styled-components";
 import ButtonOrganism from "../../organisms/ButtonOrganism";
 import { Stack } from "@mui/material";
-import "./index.css";
+const LoginFormContainer = styled.div`
+  margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    text-align: center;
+`;
+const Title = styled(TypographyComp)`
+  font-weight: 800;
+`;
+const Subtitle = styled(TypographyComp)`
+  font-size: 16px;
+`;
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   return (
-    <div id="loginform">
+    <LoginFormContainer id="loginform">
       <Stack mb={5} spacing={3}>
         <div>
-          <TypographyComp variant="h4" style={{ fontWeight: 800 }}>
-            Welcome Back
-          </TypographyComp>
-          <TypographyComp variant="body1" style={{ fontSize: 100 }}>
-            Enter your details below
-          </TypographyComp>
+        <Title variant="h4">Welcome Back</Title>
+        <Subtitle variant="body1">Enter your details below</Subtitle>
         </div>
         <Stack spacing={2}>
           <div>
@@ -39,7 +49,7 @@ const LoginForm: React.FC = () => {
           </div>
         </Stack>
       </Stack>
-    </div>
+    </LoginFormContainer>
   );
 };
 export default LoginForm;

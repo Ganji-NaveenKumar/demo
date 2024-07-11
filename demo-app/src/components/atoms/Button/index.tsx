@@ -5,10 +5,10 @@ interface ButtonProps{
     style:React.CSSProperties;
     onClick:()=>void;
 }
-const ButtonComp:React.FC<ButtonProps>=(props)=>{
+const ButtonComp:React.FC<ButtonProps>=({children,style,onClick})=>{
     return(
         <div>
-            <Button variant='contained' style={props.style} onClick={props.onClick}>{props.children}</Button>
+            <Button variant='contained' style={style} onClick={onClick}>{children}</Button>
         </div>
     );
 }

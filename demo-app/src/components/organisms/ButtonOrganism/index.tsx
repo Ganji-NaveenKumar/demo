@@ -2,13 +2,12 @@ import React from "react";
 import ButtonComp from "../../atoms/Button";
 
 interface ButtonOrganismProps {
-  // onClick:()=> void;
   email: string;
   password: string;
 }
-const ButtonOrganism: React.FC<ButtonOrganismProps> = (props) => {
+const ButtonOrganism: React.FC<ButtonOrganismProps> = (email,password) => {
   const handleClick = () => {
-    alert(`Email is:${props.email}\n Password is:${props.password}`);
+    alert(`Email is:${email}\n Password is:${password}`);
   };
   return (
     <ButtonComp

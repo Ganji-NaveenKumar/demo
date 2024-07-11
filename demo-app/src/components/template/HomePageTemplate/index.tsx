@@ -1,17 +1,25 @@
 import { Stack } from "@mui/material";
 import React from "react";
-import './index.css'
+import styled from 'styled-components';
 interface HomepageProps{
    LoginForm:React.ReactNode;
 }
-const HomePageTemplate:React.FC<HomepageProps>=(props)=>{
+const TemplateStyle=styled.div`
+    margin-top: 40px;
+    width: 400px;
+    height: 350px;
+    border-radius: 20px;
+    background-color:white;
+    padding: 20px;
+`;
+
+const HomePageTemplate:React.FC<HomepageProps>=({LoginForm})=>{
     return(
-        <div id='template'>
-            <Stack mb={2}>
-              <div>{props.LoginForm}</div>
-            </Stack>
-        </div>
-        
+       <TemplateStyle>
+        <Stack mb={2}>
+              <div>{LoginForm}</div>
+        </Stack>
+       </TemplateStyle>
     );
 }
 export default HomePageTemplate;

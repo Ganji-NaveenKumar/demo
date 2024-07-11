@@ -6,10 +6,10 @@ interface TextfieldProps{
     onChanges:(event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const TextFieldComp:React.FC<TextfieldProps>=(props)=>{
+const TextFieldComp:React.FC<TextfieldProps>=({label,type,onChanges})=>{
     return(
         <div>
-            <TextField  variant='outlined' onChange={props.onChanges} label={props.label} type={props.type} required></TextField>
+            <TextField  variant='outlined' onChange={onChanges} label={label} type={type} required></TextField>
         </div>
     );
 }
