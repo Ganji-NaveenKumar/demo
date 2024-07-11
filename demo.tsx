@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 const DemoComp:React.FC=()=>{
-    const [count,setcount]=useState(0);
+    const [count,setcount]=useState<number>(0);
     const handleClick=()=>{
         setcount(prevcount=>prevcount+2)
         setcount(prevcount=>prevcount+2)
